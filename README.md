@@ -1,6 +1,6 @@
 # Double Win Vegas
 
-Made as a requirement for the recruitment process for Anino Games. The application was developed using **Unity3D 2020.3.6f1**
+Made as a requirement for the recruitment process for Anino Games. The application was developed using **Unity3D 2021.3.22f1**
 
 ## Buttons
 - "-" = Decrease Bet Amount
