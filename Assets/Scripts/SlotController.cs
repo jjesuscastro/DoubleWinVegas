@@ -99,14 +99,14 @@ public class SlotController : MonoBehaviour
 
     public void IncreaseBet()
     {
-        baseBet = Mathf.Clamp(baseBet += betIncrement, 500, 10000);
+        baseBet = Mathf.Clamp(baseBet += betIncrement, 1, 10000);
         totalBet = baseBet * payoutLines.GetPayoutLinesCount();
         bets.UpdateTotalBetAmount(totalBet);
     }
 
     public void DecreaseBet()
     {
-        baseBet = Mathf.Clamp(baseBet -= betIncrement, 500, 10000);
+        baseBet = Mathf.Clamp(baseBet -= betIncrement, 1, 10000);
         totalBet = baseBet * payoutLines.GetPayoutLinesCount();
         bets.UpdateTotalBetAmount(totalBet);
     }
@@ -181,13 +181,6 @@ public class SlotController : MonoBehaviour
 
         }
 
-        // StringBuilder sb = new StringBuilder();
-        // sb.Append("spinResult =\n");
-        // sb.Append("{" + string.Join(", ", spinResult[0]) + "}\n");
-        // sb.Append("{" + string.Join(", ", spinResult[1]) + "}\n");
-        // sb.Append("{" + string.Join(", ", spinResult[2]) + "}\n");
-        // Debug.Log(sb);
-
         CheckPayout(spinResult);
     }
 
@@ -222,10 +215,8 @@ public class SlotController : MonoBehaviour
             {
                 pLineView.gameObject.SetActive(false);
             }
-            // Debug.Log("result " + string.Join(", ", result));
         }
 
-        // Debug.Log("payouts " + string.Join(", ", symbolPayouts));
         totalPayout = symbolPayouts.Sum() * totalBet;
     }
 
